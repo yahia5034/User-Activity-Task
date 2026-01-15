@@ -30,12 +30,15 @@ For this task, I aimed to build something that isn't just "working code" but a s
 This deploys the entire stack (Mongo, Kafka/Zookeeper, App) to your cluster.
 
 **Move to your directory and build your image** 
+
     ```bash 
     docker build -t src-node-app .
     ```
+
 **Start kubernete**
+
     ```bash 
-    Run minikube 
+    Run minikube
     minikube start --driver=docker --base-image=gcr.io/k8s-minikube/kicbase:v0.0.48
     minikube status
     minikube dashboard
@@ -110,8 +113,7 @@ Retrieve processed logs from MongoDB with pagination.
 ---
 
 ## Video Demo
-[Link to recorded demo showcasing end-to-end functionality]
-
+https://drive.google.com/file/d/13KbsODwxEpoj4Uq4uIjqjooCNR3byALF/view?usp=drive_link
 ## Project Structure
 ```
 src/
