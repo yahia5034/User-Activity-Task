@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { Kafka } = require('kafkajs')
-
+require('dotenv').config();
 const kafka = new Kafka({
   clientId: 'my-app',
   brokers: ['kafka1:9092', 'kafka2:9092'],
