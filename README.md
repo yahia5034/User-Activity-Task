@@ -28,10 +28,11 @@ For this task, I aimed to build something that isn't just "working code" but a s
 
 ### Option 1: Kubernetes (Recommended)
 This deploys the entire stack (Mongo, Kafka/Zookeeper, App) to your cluster.
-### you can find the image on:
-    ```bash
-    https://hub.docker.com/r/yahia5034/src-node-app
-    ```
+### Docker Image
+
+You can find the Docker image here:  
+[https://hub.docker.com/r/yahia5034/src-node-app](https://hub.docker.com/r/yahia5034/src-node-app)
+
 
 **Move to your directory and build your image**:
     ```bash
