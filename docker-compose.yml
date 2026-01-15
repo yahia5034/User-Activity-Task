@@ -1,7 +1,6 @@
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
-
     ports:
       - "2181:2181"
     environment:
@@ -9,7 +8,6 @@ services:
 
   kafka:
     image: confluentinc/cp-kafka:7.5.0
-
     ports:
       - "9092:9092"
     depends_on:
@@ -29,7 +27,6 @@ services:
 
   mongodb:
     image: mongo:6
-
     ports:
       - "27017:27017"
     healthcheck:
@@ -52,5 +49,5 @@ services:
         condition: service_healthy
     environment:
       KAFKA_BROKER: kafka:9092
-      MONGO_URI: mongodb://mongodb:27017/logs
+      MONGO_URI: mongodb+srv://yahiamohammedmahmoud_db_user:PtP7YfW03x6xJIYo@cluster0.zz9l4nq.mongodb.net/User-Activity
     restart: unless-stopped
