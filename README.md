@@ -30,20 +30,20 @@ For this task, I aimed to build something that isn't just "working code" but a s
 This deploys the entire stack (Mongo, Kafka/Zookeeper, App) to your cluster.
 ### you can find the image on
 
-    ```bash 
+    ```bash
     https://hub.docker.com/r/yahia5034/src-node-app
     ```
 
 **Move to your directory and build your image** 
 
-    ```bash 
+    ```bash
     docker build -t src-node-app .
     ```
 
 **Start kubernete**
 
-    ```bash 
     Run minikube
+    ```bash
     minikube start --driver=docker --base-image=gcr.io/k8s-minikube/kicbase:v0.0.48
     minikube status
     minikube dashboard
