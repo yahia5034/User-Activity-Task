@@ -28,21 +28,17 @@ For this task, I aimed to build something that isn't just "working code" but a s
 
 ### Option 1: Kubernetes (Recommended)
 This deploys the entire stack (Mongo, Kafka/Zookeeper, App) to your cluster.
-### you can find the image on
-
+### you can find the image on:
     ```bash
     https://hub.docker.com/r/yahia5034/src-node-app
     ```
 
-**Move to your directory and build your image** 
-
+**Move to your directory and build your image**:
     ```bash
     docker build -t src-node-app .
     ```
 
 **Start kubernete**
-
-    Run minikube
     ```bash
     minikube start --driver=docker --base-image=gcr.io/k8s-minikube/kicbase:v0.0.48
     minikube status
