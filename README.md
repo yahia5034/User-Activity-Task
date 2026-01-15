@@ -29,6 +29,18 @@ For this task, I aimed to build something that isn't just "working code" but a s
 ### Option 1: Kubernetes (Recommended)
 This deploys the entire stack (Mongo, Kafka/Zookeeper, App) to your cluster.
 
+**Move to your directory and build your image** 
+    ```bash 
+    docker build -t src-node-app .
+    ```
+**Start kubernete**
+    ```bash 
+    Run minikube 
+    minikube start --driver=docker --base-image=gcr.io/k8s-minikube/kicbase:v0.0.48
+    minikube status
+    minikube dashboard
+    ```
+
 1.  **Apply Configurations**:
     ```bash
     kubectl apply -f src/k8s/kafka.yaml
@@ -61,7 +73,7 @@ This deploys the entire stack (Mongo, Kafka/Zookeeper, App) to your cluster.
 ### Option 2: Docker Compose (Local Testing)
 If you prefer running it without K8s overhead:
 ```bash
-docker-compose up --build
+docker compose -f docker-compose.yaml up -d
 ```
 The API will be available at `http://localhost:3000`.
 
@@ -72,7 +84,7 @@ The API will be available at `http://localhost:3000`.
 ### 1. Ingest Log (Producer)
 Send a new activity log to the Kafka topic.
 
-*   **Endpoint**: `POST /logs`
+*   **Endpoint**: `POST /user-activity`
 *   **Body**:
     ```json
     {
@@ -85,7 +97,7 @@ Send a new activity log to the Kafka topic.
 ### 2. Fetch Logs (Consumer View)
 Retrieve processed logs from MongoDB with pagination.
 
-*   **Endpoint**: `GET /logs`
+*   **Endpoint**: `GET /user-activity`
 *   **Query Params**:
     *   `page`: Page number (default: 1)
     *   `limit`: Items per page (default: 10)
