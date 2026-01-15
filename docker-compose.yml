@@ -49,5 +49,5 @@ services:
         condition: service_healthy
     environment:
       KAFKA_BROKER: kafka:9092
-      MONGO_URI: mongodb+srv://yahiamohammedmahmoud_db_user:PtP7YfW03x6xJIYo@cluster0.zz9l4nq.mongodb.net/User-Activity
+      MONGO_URI: mongodb://mongodb:27017/User-Activity
     restart: unless-stopped
